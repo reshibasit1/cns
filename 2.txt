@@ -33,6 +33,10 @@ void inversematrix() { //find inverse of key matrix
    for(j = 0; j < 3; j++) {
       if(i == j)
          b[i][j]=1;
+         
+         
+         
+         101240356
       else
          b[i][j]=0;
    }
