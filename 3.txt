@@ -1,53 +1,32 @@
-# Python code to implement
-# Vigenere Cipher
+n <- as.integer(readline(prompt = "Enter no of students"))
 
-# This function generates the
-# key in a cyclic manner until
-# it's length isn't equal to
-# the length of original text
-def generateKey(string, key):
-	key = list(key)
-	if len(string) == len(key):
-		return(key)
-	else:
-		for i in range(len(string) -
-					len(key)):
-			key.append(key[i % len(key)])
-	return("" . join(key))
-	
-# This function returns the
-# encrypted text generated
-# with the help of the key
-def cipherText(string, key):
-	cipher_text = []
-	for i in range(len(string)):
-		x = (ord(string[i]) +
-			ord(key[i])) % 26
-		x += ord('A')
-		cipher_text.append(chr(x))
-	return("" . join(cipher_text))
-	
-# This function decrypts the
-# encrypted text and returns
-# the original text
-def originalText(cipher_text, key):
-	orig_text = []
-	for i in range(len(cipher_text)):
-		x = (ord(cipher_text[i]) -
-			ord(key[i]) + 26) % 26
-		x += ord('A')
-		orig_text.append(chr(x))
-	return("" . join(orig_text))
-	
-# Driver code
-if __name__ == "__main__":
-	string = "GEEKSFORGEEKS"
-	keyword = "AYUSH"
-	key = generateKey(string, keyword)
-	cipher_text = cipherText(string,key)
-	print("Ciphertext :", cipher_text)
-	print("Original/Decrypted Text :",
-		originalText(cipher_text, key))
+USN <- vector(mode="character", length= n) 
+Name <- vector(mode="character", length= n)
+Marks <- vector(mode="numeric", length= n)
 
-# This code is contributed
-# by Pratik Somwanshi
+print("Enter USN")
+for (i in 1:n)
+	USN[i] <- as.character(readline())
+print("Enter Name")
+for (i in 1:n)
+	Name [i] <- readline()
+print("Enter Marks" )
+for (i in 1:n)
+	Marks[i] <- as.integer(readline())
+	
+	
+student <- data.frame(USN,Name,Marks)
+print("The Student detials are as follows") 
+print(student)
+
+print("Enter Age")
+Age <- vector(mode="integer", length=n)
+for (i in 1:n)
+	Age [i] <- readline()
+student <- cbind(student,Age)
+print(student)
+
+for(i in 1:n)
+	if ( student[i,][3] > 25 )
+		if (student[i,][4] > 20)
+			print(student[i,])
