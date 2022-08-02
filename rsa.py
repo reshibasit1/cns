@@ -2,16 +2,16 @@
 # For demonstration, values are
 # relatively small compared to practical application
 import math
+def gcd(x,y):
+    if (x > y):
+        smaller=y
+    else:
+        smaller=x
+    for i in range(1, smaller+1):
+               if((x % i == 0) and (y % i == 0)):
+                    hcf = i 
+    return hcf
 
-
-def gcd(a, h):
-	temp = 0
-	while(1):
-		temp = a % h
-		if (temp == 0):
-			return h
-		a = h
-		h = temp
 
 
 p = 3
@@ -32,10 +32,11 @@ while (e < phi):
 # Private key (d stands for decrypt)
 # choosing d such that it satisfies
 # d*e = 1 + k * totient
+print(e)
 
 k = 2
 d = (1 + (k*phi))/e
-
+print(d)
 # Message to be encrypted
 msg = 12.0
 
