@@ -75,3 +75,13 @@ int main() {
    encrypt();
    decrypt();
 }
+Enter 3x3 matrix for key (should have inverse):
+1
+0
+1
+2
+4
+0
+3
+5
+6
